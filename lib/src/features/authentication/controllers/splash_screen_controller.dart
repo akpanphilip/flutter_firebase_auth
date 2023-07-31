@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter_firebase_auth/src/features/authentication/screens/splash_screen/welcome_screen.dart';
+import 'package:flutter_firebase_auth/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 
 class SplashScreenController extends GetxController {
@@ -12,7 +12,7 @@ class SplashScreenController extends GetxController {
     await Future.delayed(Duration(milliseconds: 500));
     animate.value = true;
     await Future.delayed(Duration(milliseconds: 5000));
-    Get.to(WelcomeScreen());
+    Get.to(() => WelcomeScreen());
     // Navigator.pushReplacement(
     //     context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
   }

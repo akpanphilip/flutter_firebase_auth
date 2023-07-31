@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/src/constants/image_strings.dart';
 import 'package:flutter_firebase_auth/src/features/authentication/controllers/splash_screen_controller.dart';
-import 'package:flutter_firebase_auth/src/features/authentication/screens/splash_screen/welcome_screen.dart';
+import 'package:flutter_firebase_auth/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
