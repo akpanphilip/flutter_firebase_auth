@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/src/constants/colors.dart';
 import 'package:flutter_firebase_auth/src/constants/image_strings.dart';
+import 'package:flutter_firebase_auth/src/features/authentication/screens/login/login_screen.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -15,7 +17,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
+    // var height = MediaQuery.of(context).size.height;
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -49,7 +51,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: [
                 Expanded(
                     child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const LoginScreen()),
                         style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(),
                           foregroundColor: tSecondaryColor,
