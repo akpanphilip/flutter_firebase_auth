@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_auth/src/features/authentication/screens/forgot_password/otp_screen.dart';
 import 'package:flutter_firebase_auth/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,6 +62,9 @@ class _ForgotPasswordMailScreenState extends State<ForgotPasswordMailScreen> {
                                 SizedBox(height: 20),
                                 FormButton(
                                   text: 'Next',
+                                  onPress: () {
+                                    Get.to(() => OtpScreen());
+                                  },
                                 ),
                               ]),
                         )),

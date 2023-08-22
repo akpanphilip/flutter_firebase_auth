@@ -54,9 +54,12 @@ class ResetOpt extends StatelessWidget {
 // form submit button
 class FormButton extends StatelessWidget {
   final String text;
+  final VoidCallback onPress;
+
   const FormButton({
     super.key,
     required this.text,
+    required this.onPress,
   });
 
   @override
@@ -72,7 +75,7 @@ class FormButton extends StatelessWidget {
             side: BorderSide(color: tSecondaryColor),
             padding: EdgeInsets.symmetric(vertical: 20),
           ),
-          onPressed: () {},
+          onPressed: onPress,
           child: Text(text.toUpperCase())),
     );
   }
