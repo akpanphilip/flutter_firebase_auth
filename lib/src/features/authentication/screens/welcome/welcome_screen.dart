@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/src/constants/colors.dart';
 import 'package:flutter_firebase_auth/src/constants/image_strings.dart';
 import 'package:flutter_firebase_auth/src/features/authentication/screens/login/login_screen.dart';
+import 'package:flutter_firebase_auth/src/features/authentication/screens/register/register_screen.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -62,7 +63,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 SizedBox(width: 10),
                 Expanded(
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const RegisterScreen()),
                         style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(),
                           foregroundColor: tWhiteColor,

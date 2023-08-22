@@ -33,14 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.w700),
                 ),
                 SizedBox(height: 10),
-                // Text(
-                //     ''
-                //     textAlign: TextAlign.center,
-                //     style: GoogleFonts.poppins(
-                //         color: tDarkColor,
-                //         fontSize: 14,
-                //         fontWeight: FontWeight.w500)),
-
                 Form(
                     child: Container(
                   padding: EdgeInsets.symmetric(vertical: 20.0),
