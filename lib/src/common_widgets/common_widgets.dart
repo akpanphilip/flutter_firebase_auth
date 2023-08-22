@@ -19,7 +19,7 @@ class ResetOpt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -47,6 +47,33 @@ class ResetOpt extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+// form submit button
+class FormButton extends StatelessWidget {
+  final String text;
+  const FormButton({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+          style: OutlinedButton.styleFrom(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            foregroundColor: tWhiteColor,
+            backgroundColor: tSecondaryColor,
+            side: BorderSide(color: tSecondaryColor),
+            padding: EdgeInsets.symmetric(vertical: 20),
+          ),
+          onPressed: () {},
+          child: Text(text.toUpperCase())),
     );
   }
 }
