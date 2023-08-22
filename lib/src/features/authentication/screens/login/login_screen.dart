@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/src/constants/colors.dart';
 import 'package:flutter_firebase_auth/src/constants/image_strings.dart';
 import 'package:flutter_firebase_auth/src/constants/sizes.dart';
+import 'package:flutter_firebase_auth/src/features/authentication/screens/register/register_screen.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -58,44 +60,64 @@ class _LoginScreenState extends State<LoginScreen> {
                               border: OutlineInputBorder()),
                         ),
                         SizedBox(height: 10),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Forget Password?',
-                              style: GoogleFonts.poppins(color: tDarkColor),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                'Forgot Password?',
+                                style: GoogleFonts.poppins(color: tDarkColor),
+                              ),
                             ),
-                          ),
+                            TextButton(
+                              onPressed: () =>
+                                  Get.to(() => const RegisterScreen()),
+                              child: Text(
+                                'Sign Up',
+                                style: GoogleFonts.poppins(color: tDarkColor),
+                              ),
+                            ),
+                          ],
                         ),
+                        SizedBox(height: 10),
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
                               style: OutlinedButton.styleFrom(
-                                shape: RoundedRectangleBorder(),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
                                 foregroundColor: tWhiteColor,
                                 backgroundColor: tSecondaryColor,
                                 side: BorderSide(color: tSecondaryColor),
                                 padding: EdgeInsets.symmetric(vertical: 20),
                               ),
                               onPressed: () {},
-                              child: Text('Login')),
+                              child: Text('Login'.toUpperCase())),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 20),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text('OR'),
-                            SizedBox(
-                              width: double.infinity,
-                              child: OutlinedButton.icon(
+                            SizedBox(height: 20),
+                            Container(
+                                height: 60,
+                                width: double.infinity,
+                                child: OutlinedButton.icon(
+                                  style: OutlinedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                  ),
                                   onPressed: () {},
                                   icon: Image(
                                       image: AssetImage(google),
                                       width: 30,
                                       height: 30),
-                                  label: Text('Sign in with Google')),
-                            )
+                                  label:
+                                      Text('Sign up with Google'.toUpperCase()),
+                                ))
                           ],
                         )
                       ]),

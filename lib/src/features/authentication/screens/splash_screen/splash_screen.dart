@@ -6,41 +6,48 @@ import 'package:flutter_firebase_auth/src/features/authentication/controllers/sp
 import 'package:flutter_firebase_auth/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   SplashScreen({super.key});
 
-  final splashController = Get.put(SplashScreenController());
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  bool animate = false;
+  
+  // final splashController = Get.put(SplashScreenController());
+
+  @override
+  void initState() {
+    startAnimation();
+  }
 
   @override
   Widget build(BuildContext context) {
-    splashController.startAnimation();
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
-            Obx(
-              () => AnimatedPositioned(
-                  duration: const Duration(milliseconds: 1600),
-                  top: splashController.animate.value ? 60 : -160,
-                  left: splashController.animate.value ? 60 : -160,
-                  child: Container(
-                    width: splashController.animate.value ? 60 : 10,
-                    height: splashController.animate.value ? 60 : 10,
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(50)),
-                  )),
-            ),
-            Obx(
-              () => AnimatedPositioned(
-                  duration: const Duration(milliseconds: 1600),
-                  bottom: 200,
-                  right: -100,
-                  child: AnimatedOpacity(
-                      duration: const Duration(milliseconds: 1600),
-                      opacity: splashController.animate.value ? 1 : 0,
-                      child: Image(image: AssetImage(logoImage)))),
-            ),
+            AnimatedPositioned(
+                duration: const Duration(milliseconds: 1600),
+                top: animate ? 60 : -160,
+                left: animate ? 60 : -160,
+                child: Container(
+                  width: animate ? 60 : 10,
+                  height: animate ? 60 : 10,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(50)),
+                )),
+            AnimatedPositioned(
+                duration: const Duration(milliseconds: 1600),
+                bottom: 200,
+                right: -100,
+                child: AnimatedOpacity(
+                    duration: const Duration(milliseconds: 1600),
+                    opacity: animate ? 1 : 0,
+                    child: Image(image: AssetImage(logoImage)))),
             Positioned(
                 bottom: 300,
                 right: -180,
@@ -55,5 +62,15 @@ class SplashScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future startAnimation() async {
+    await Future.delayed(Duration(milliseconds: 500));
+    setState(() {
+      animate = true;
+    });
+    await Future.delayed(Duration(milliseconds: 5000));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
   }
 }
