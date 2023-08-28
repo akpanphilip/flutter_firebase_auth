@@ -5,6 +5,7 @@ import 'package:flutter_firebase_auth/src/constants/colors.dart';
 import 'package:flutter_firebase_auth/src/constants/image_strings.dart';
 import 'package:flutter_firebase_auth/src/constants/sizes.dart';
 import 'package:flutter_firebase_auth/src/features/authentication/screens/forgot_password/forgot_password_mail_screen.dart';
+import 'package:flutter_firebase_auth/src/features/authentication/screens/inner_pages/dashboard_screen.dart';
 import 'package:flutter_firebase_auth/src/features/authentication/screens/register/register_screen.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -97,7 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 side: BorderSide(color: tSecondaryColor),
                                 padding: EdgeInsets.symmetric(vertical: 20),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(() => DashboardScreen());
+                              },
                               child: Text('Login'.toUpperCase())),
                         ),
                         SizedBox(height: 20),
@@ -137,6 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<dynamic> PasswordResetModal(BuildContext context) {
     return showModalBottomSheet(
+        backgroundColor: Colors.white,
         context: context,
         builder: (context) => Container(
               padding: EdgeInsets.all(30),

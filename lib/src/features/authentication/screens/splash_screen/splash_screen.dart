@@ -15,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   bool animate = false;
-  
+
   // final splashController = Get.put(SplashScreenController());
 
   @override
@@ -42,8 +42,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 )),
             AnimatedPositioned(
                 duration: const Duration(milliseconds: 1600),
-                bottom: 200,
-                right: -100,
+                bottom: animate ? 200 : -150,
+                right: animate ? 100 : -150,
                 child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 1600),
                     opacity: animate ? 1 : 0,

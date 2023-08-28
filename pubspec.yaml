@@ -65,6 +65,19 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/google.png
+    - assets/images/nike_1.png
+    - assets/images/nike_2.png
+    - assets/images/nike_3.png
+    - assets/images/nike_4.png
+    - assets/images/addidas_1.png
+    - assets/images/addidas_2.png
+    - assets/images/addidas_3.png
+    - assets/images/addidas_4.png
+    - assets/images/soccer_1.png
+    - assets/images/soccer_2.png
+    - assets/images/soccer_3.png
+    - assets/images/soccer_4.png
+    - assets/images/profile.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

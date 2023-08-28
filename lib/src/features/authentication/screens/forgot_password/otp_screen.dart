@@ -57,6 +57,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         numberOfFields: 6,
                         fillColor: Colors.black.withOpacity(0.1),
                         filled: true,
+                        fieldWidth: 50,
                       ),
                       SizedBox(height: 20),
                       FormButton(
