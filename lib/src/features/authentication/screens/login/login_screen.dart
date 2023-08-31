@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.person_outline_outlined),
+                              prefixIcon: Icon(Icons.email_outlined),
                               labelText: 'Email',
                               hintText: 'Email',
                               border: OutlineInputBorder()),

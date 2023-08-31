@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/src/constants/image_strings.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../../constants/colors.dart';
+import 'package:flutter_firebase_auth/src/repository/authentication_repository/authentication_repository.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -99,7 +99,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ProfileMenuWidget(
                   title: 'Logout',
                   icon: Icons.logout_rounded,
-                  onPress: () {},
+                  onPress: () {
+                    AuthenticationRepository.instance.logout();
+                  },
                   endIcon: false,
                   textColor: Colors.red,
                 ),
